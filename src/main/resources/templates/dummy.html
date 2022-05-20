@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>CRUD KTP</title>
+        <meta charset="UTF-8">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="/create">Create</a>
+        <div class="table">
+            <table class="table allign-middle">
+                <tr>
+                    <th>NIK</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Foto</th>
+                </tr>
+                <tr th:each="godummy:${godummy}">
+                    <td th:text="${godummy.id}"></td>
+                    <td th:text="${#dates.format(godummy.tanggal,'dd-MMM-yyyy')}"></td>
+                    <td> <img th:src="@{${'/gambar?id='+ godummy.id}}" alt="gambar" width="100"> </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
