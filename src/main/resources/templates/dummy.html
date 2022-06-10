@@ -5,42 +5,48 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>E-KTP</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
               rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
               crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body >
-        <button class="btn btn-inline-secondary bg-grey">
-            <a class="" href="/create">Create</a>
-        </button>        
-        <div class="table-fluid">
-            <table class="table table-hover bg-grey rounded-4">
+    <body style="background-color: F6FBF4">
+        <header class="">
+      <h3 style="" class="text-center mb-3 mt-5">Dummy</h3>
+      <div class="container ">
+          <button class="btn btn-primary mb-3">
+              <a style="color: white" href="/create">Create</a>
+          </button>
+        <div class="col-12 mt-5 text-center mt-auto">
+          <div class="row">
+            <table class="table table-hover bg-white rounded-4">
+              <thead class="table-light">
                 <tr>
-                    <th>NIK</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Foto</th>                
-                    <th>Action</th>
+                  <th scope="col">NIK</th>
+                  <th scope="col">Tanggal Lahir</th>
+                  <th scope="col">Foto</th>
+                  <th scope="col">Action</th>
                 </tr>
+              </thead>
+              <tbody>
                 <tr th:each="godummy:${godummy}">
-                        <td th:text="${godummy.id}"></td>                        
-                        <td th:text="${#calendars.format(godummy.tanggal, 'dd-MMM-yyyy')}"></td>
-                        <td>
-                             <img th:src="@{${'/gambar?id='+ godummy.id}}" alt="gambar" width="200">
-                           </td>
-                        <td>
-                            <a  th:href="@{/edit/{id}(id=${godummy.id})}" class="btn btn-outline-secondary">Edit</a>
-                            <a  th:href="@{/delete/{id}(id=${godummy.id})}" class="btn btn-outline-success" onclick="return confirm('Hapuskan Bobi Dari Dunia Ini?')">Delete</a>
-                        </td>
-                        
-                        
+                  <!-- <th scope="row">Senin, 30 Mei 2022</th> -->
+                  <td th:text="${godummy.id}"></td>
+                  <td th:text="${#calendars.format(godummy.tanggal, 'dd-MMM-yyyy')}"></td>
+                  <td>
+                    <img th:src="@{${'/gambar?id='+ godummy.id}}" alt="gambar" width="200" />
+                  </td>
+                  <td>
+                    <a th:href="@{/edit/{id}(id=${godummy.id})}" class="btn btn-outline-warning">Edit</a>
+                    <a th:href="@{/delete/{id}(id=${godummy.id})}" class="btn btn-outline-danger" onclick="return confirm('Hapuskan Bobi Dari Dunia Ini?')">Delete</a>
+                  </td>
                 </tr>
+              </tbody>
             </table>
+          </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
-                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
-        crossorigin="anonymous"></script>
-    </body>
+      </div>
+    </header>
 </html>
