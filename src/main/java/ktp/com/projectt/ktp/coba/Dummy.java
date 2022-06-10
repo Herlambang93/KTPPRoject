@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ktp.com.projectt.ktp.baru;
+package ktp.com.projectt.ktp.coba;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -96,7 +96,7 @@ public class Dummy implements Serializable {
 
     @Override
     public String toString() {
-        return "ktp.com.projectt.ktp.baru.Dummy[ id=" + id + " ]";
+        return "ktp.com.projectt.ktp.coba.Dummy[ id=" + id + " ]";
     }
     
 }

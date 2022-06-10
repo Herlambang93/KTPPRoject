@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ktp.com.projectt.ktp.baru;
+package ktp.com.projectt.ktp.coba;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,8 +13,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import ktp.com.projectt.ktp.baru.exceptions.NonexistentEntityException;
-import ktp.com.projectt.ktp.baru.exceptions.PreexistingEntityException;
+import ktp.com.projectt.ktp.coba.exceptions.NonexistentEntityException;
+import ktp.com.projectt.ktp.coba.exceptions.PreexistingEntityException;
 
 /**
  *
@@ -25,10 +25,10 @@ public class DummyJpaController implements Serializable {
     public DummyJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ktp.com_projectt.ktp_jar_0.0.1-SNAPSHOTPU");
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ktp.com_projectt.ktp_jar_0.0.1-SNAPSHOTPU");;
 
-    DummyJpaController() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public DummyJpaController() {
+        
     }
 
     public EntityManager getEntityManager() {

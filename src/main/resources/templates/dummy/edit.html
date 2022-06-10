@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>DUMMY</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Dummy Edit</div>
+        <hr>
+        <form th:action="@{/newedit}" th:object="${godummy}" method="post" enctype="multipart/form-data">
+            <table align="center">
+                <tr>
+                    <td>NIK</td>
+                    <td>
+                        <input type="hidden" class="form-control" name="id" th:value="${godummy.id}">
+                        <input type="text" class="form-control" name="id" th:value="${godummy.id}" disabled>
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>Tanggal Lahir</td>
+                    <td><input type="date" class="form-control" name="tanggal" th:value="${#dates.format(godummy.tanggal,'yyyy-MM-dd')}"></td>
+                </tr>
+                 <tr>
+                    <td>Foto</td>
+                    <td>
+                        <img th:src="@{${'/gambar?id='+ godummy.id}}" alt="gambar" width="100">
+                        <input type="file" class="form-control" name="gambar" th:value="@{${godummy.gambar}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Submit</button>
+                        <button><a th:href="@{/read}" class="btn btn-outline-secondary">Back</a></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

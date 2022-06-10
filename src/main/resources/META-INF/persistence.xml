@@ -3,7 +3,7 @@
   <persistence-unit name="ktp.com_projectt.ktp_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>ktp.com.projectt.ktp.Data</class>
-    <class>ktp.com.projectt.ktp.baru.Dummy</class>
+    <class>ktp.com.projectt.ktp.coba.Dummy</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ktp?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

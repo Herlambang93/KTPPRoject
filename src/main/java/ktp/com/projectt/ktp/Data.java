@@ -40,6 +40,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Data.findByBerlakuhingga", query = "SELECT d FROM Data d WHERE d.berlakuhingga = :berlakuhingga")})
 public class Data implements Serializable {
 
+    @Lob
+    @Column(name = "foto")
+    private byte[] foto;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -74,9 +78,6 @@ public class Data implements Serializable {
     private String warganegara;
     @Column(name = "berlakuhingga")
     private String berlakuhingga;
-    @Lob
-    @Column(name = "foto")
-    private byte[] foto;
 
     public Data() {
     }
@@ -185,13 +186,6 @@ public class Data implements Serializable {
         this.berlakuhingga = berlakuhingga;
     }
 
-    public byte[] getFoto() {
-        return foto;
-    }
-
-    public void setFoto(byte[] foto) {
-        this.foto = foto;
-    }
 
     @Override
     public int hashCode() {
@@ -216,6 +210,14 @@ public class Data implements Serializable {
     @Override
     public String toString() {
         return "ktp.com.projectt.ktp.Data[ id=" + id + " ]";
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
     
 }
